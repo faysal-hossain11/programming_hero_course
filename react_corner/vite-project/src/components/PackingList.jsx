@@ -1,65 +1,43 @@
-import React from 'react';
-import { people } from '../data/list_of_data';
-import { getImageUrl } from '../utils';
+import React, { useEffect, useState } from "react";
 
+const UsersList = () => {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("https://jsonplaceholder.typicode.com/users");
+        if (!response.ok) throw new Error("Failed to fetch users");
 
-const PackingList = () => {
+        const data = await response.json();
+        setUsers(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    const chemist = people.filter((person) => (person?.profession === "chemist"));
-    const everyOne = people.filter((person) => (person?.profession !== "chemist"));
+    fetchUsers();
+  }, []); 
 
-    // function handleClick() {
-    //     alert("Button clicked!");
-    // }
+  if (loading) return <p>Loading users...</p>;
+  if (error) return <p>Error: {error}</p>;
 
-    return (
-        <>
-            <h1 className='text-2xl font-bold mb-3'>Chemist list:</h1>
-            <div className='grid grid-cols-2 gap-4'>
-                {chemist.map((person) => {
-                    return (
-                        <div key={person?.id} className='p-2 rounded bg-sky-300 flex gap-2 mb-3' >
-                            <div>
-                                <img src={getImageUrl(person)} alt={person?.name} />
-                            </div>
-                            <div>
-                                <h2>{person?.name}</h2>
-                                <h2>{person?.profession}</h2>
-                                <h2>{person?.accomplishment}</h2>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-
-            <h1 className='text-2xl font-bold mb-3'>EveryOne list</h1>
-            <div className='grid grid-cols-3 gap-4'>
-                {everyOne.map((person) => {
-                    return (
-                        <div key={person?.id} className='p-4 rounded bg-sky-300 flex gap-2 mb-3 shadow' >
-                            <div>
-                                <img src={getImageUrl(person)} alt={person?.name} className='w-full rounded-full' />
-                            </div>
-                            <div>
-                                <h2>{person?.name}</h2>
-                                <h2>{person?.profession}</h2>
-                                <h2>{person?.accomplishment}</h2>
-                            </div>
-                        </div>
-                    )
-                })}
-
-                <div className='mb-80'>
-                    <button onClick={() => {console.log("button clicked");
-                    }} className='bg-sky-500 py-2 px-4 text-white rounded-md '>
-                        I don't do anything
-                    </button>
-                </div>
-
-            </div>
-        </>
-    );
+  return (
+    <div>
+      <h2>User List</h2>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            <strong>{user.name}</strong> - {user.email} 
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-export default PackingList;
+export default UsersList;

@@ -1,26 +1,52 @@
-import React, { Profiler, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AvoidContradiction from './components/AvoidConcradiction';
-
+import PackingList from './components/PackingList';
 const App = () => {
-
-  const [user, setUser] = useState([])
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-    .then((res) => res.json())
-    .then((data) => setUser(data));
-    console.log("asdfasdf",user);
-    
-  }, [])
+    const fetchUsers = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setUsers(data);
+        setError(null);
+      } catch (err) {
+        setError(err.message);
+        setUsers([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, []); // Empty dependency array means this runs once on mount
+
+  if (isLoading) {
+    return <div>Loading users...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <>
-
-      {/* <AvoidContradiction /> */}
-      {/* <Profiler /> */}
-
       <div>
-        <h3>useEffect</h3>
+        {users.map((user) => {
+          <div key={user?.id}>
+            <h4>{user?.name}</h4>
+            <h4>{user?.email}</h4>
+          </div>
+        })}
       </div>
     </>
   );
