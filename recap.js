@@ -108,21 +108,37 @@
 
 
 
-const items = [
-  { id: 1, category: "A", score: 10 },
-  { id: 2, category: "B", score: 5 },
-  { id: 1, category: "A", score: 15 }, // duplicate id with higher score
-  { id: 3, category: "A", score: 7 }
-];
+// const items = [
+//   { id: 1, category: "A", score: 10 },
+//   { id: 2, category: "B", score: 5 },
+//   { id: 1, category: "A", score: 15 }, // duplicate id with higher score
+//   { id: 3, category: "A", score: 7 }
+// ];
 
-const uniqueById = Object.values(
+// const uniqueById = Object.values(
+
+// )
+
+
+/** Problem 06 :  (Current Salary )  */
+var experience = 30;
+var startingSalary = 45000;
+//write your code here
+
+// for (let i = 1; i <= experience; i++) {
+//   startingSalary *= 1.05; // 5% increase each year
+// }
+// // Round to 2 decimal places
+// currentSalary = Math.round(startingSalary * 100) / 100;
+
+// console.log(currentSalary.toFixed(2));
+
+
+for (var i = 1; i <= experience; i++) {
+  fivePerSalary = (startingSalary * 5) / 100;
+  // console.log(sSalary);
   
-)
-
-
-
-
-
-
-
-
+}
+sSalary = startingSalary * fivePerSalary
+console.log(sSalary);
+console.log(fivePerSalary);
