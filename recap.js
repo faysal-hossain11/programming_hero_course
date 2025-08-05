@@ -120,25 +120,27 @@
 // )
 
 
-/** Problem 06 :  (Current Salary )  */
-var experience = 30;
-var startingSalary = 45000;
-//write your code here
+// /** Problem 06 :  (Current Salary )  */
+// var experience = 30;
+// var startingSalary = 45000;
+// //write your code here
 
-// for (let i = 1; i <= experience; i++) {
-//   startingSalary *= 1.05; // 5% increase each year
+// var salaryWithIncrement = startingSalary;
+
+// for(var i = 1; i <= experience; i++ ) {
+//   salaryWithIncrement = salaryWithIncrement + ((salaryWithIncrement * 5) / 100)
 // }
-// // Round to 2 decimal places
-// currentSalary = Math.round(startingSalary * 100) / 100;
+// currentSalary = salaryWithIncrement.toFixed(2);
 
-// console.log(currentSalary.toFixed(2));
+// console.log(currentSalary);
 
 
-for (var i = 1; i <= experience; i++) {
-  fivePerSalary = (startingSalary * 5) / 100;
-  // console.log(sSalary);
-  
+function checkPassOrFail(marks) {
+   if (marks <= 40) {
+      console.log("Pass");
+   } else {
+      console.log("Fail!");
+   }
 }
-sSalary = startingSalary * fivePerSalary
-console.log(sSalary);
-console.log(fivePerSalary);
+
+checkPassOrFail(50)
