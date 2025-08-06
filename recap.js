@@ -135,12 +135,25 @@
 // console.log(currentSalary);
 
 
-function checkPassOrFail(marks) {
-   if (marks <= 40) {
-      console.log("Pass");
-   } else {
-      console.log("Fail!");
-   }
-}
+// function checkPassOrFail(marks) {
+//    if (marks <= 40) {
+//       console.log("Pass");
+//    } else {
+//       console.log("Fail!");
+//    }
+// }
 
-checkPassOrFail(50)
+// checkPassOrFail(50)
+
+
+// setTimeout(() => {
+//    console.log("wait 3 seconds");
+// }, 3000);
+
+// let num = 131;
+// setInterval(() => {
+//    num++
+//    console.log(num);
+   
+// }, 1000)
+
