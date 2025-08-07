@@ -157,3 +157,52 @@
    
 // }, 1000)
 
+
+
+// without reverse() call
+// const colors = ['red', 'blue', 'green', 'yellow', 'orange']
+// console.log(colors?.reverse());
+
+// const numbers = [12, 98, 5, 41, 23, 78, 46];
+// for (number of numbers) {
+//     if(number % 2 === 0) {
+//         console.log(number);
+//     }
+    
+// }
+
+// while(number of numbers)
+
+// var numbers = ['Tom', 'Tim', 'Tin', 'Tik']
+// console.log(numbers.join(" "));
+
+
+// const statement = 'I am a hard working person';
+
+// const rStatem = statement.split(" ").reverse().join(" ")
+// console.log(rStatem);
+
+// const ary = [1, 3, 5]
+// console.log(ary);
+// ary.unshift(99)
+// console.log(ary);
+
+// const students = [
+//   { name: "John", marks: 85 },
+//   { name: "Alice", marks: 90 }
+// ]
+
+// for(const student of students) {
+//     console.log(`${student?.name} score ${student?.marks}`);
+    
+// }
+
+
+const ary = [
+  [1, 2],
+  [3, 4],
+  [5, 6]
+]
+console.log(ary);
+ary[1][0] = 99
+console.log(ary);
