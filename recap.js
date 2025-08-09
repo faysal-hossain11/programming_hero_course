@@ -207,3 +207,70 @@
 // ary[1][0] = 99
 // console.log(ary);
 
+
+// const numbers = [23, 34, 55, 124, 35];
+
+// const sumFunction = (numbers) => {
+//   let sum = 0
+//   for(const number of numbers) {
+//     console.log(number);
+//     sum = sum + number;
+//   }
+//   return sum;
+// }
+
+// const result = sumFunction(numbers);
+// console.log(result);
+
+
+// const evenNumbers = (numbers) => {
+//   // let evenAry = [];
+//   let sum = 0;
+//   for(const number of numbers) {
+//     if(number % 2 === 0) {
+//       // evenAry.push(number)
+//       sum += number
+//     }
+//   }
+//   return sum;
+// }
+
+// const even = evenNumbers(numbers);
+// console.log(`Even numbers : ${even}`);
+
+
+// const multiply = (a, b, c, d) => {
+//     return a * b * c * d;
+// }
+
+// const multValues = [3, 8, 10, 12]
+// const multiplyNumbers =  multiply(...multValues);
+// console.log(multiplyNumbers);
+
+
+// const myFunction = (number) => {
+//     if(number % 2 === 0) {
+//         return number * 2
+//     } else {
+//         return number / 2
+//     }
+// }
+
+// const number = 32
+// const result = myFunction(number)
+// console.log(result);
+
+
+const numbers = [11, 22, 234, 44, 55];
+const make_avg = (numbers) => {
+    let sum = 0;
+    for (const num of numbers) {
+        sum += num    
+    }
+    const avg = sum / numbers?.length;
+    return avg;       
+}
+
+const result = make_avg(numbers);
+console.log(result);
+
