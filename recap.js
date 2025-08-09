@@ -515,19 +515,69 @@
 
 
 
-const getComments = async (url) => {
-    try {
-        const res = await fetch(url)
-        if(!res?.ok) {
-            throw new Error("Network response was not ok!");
-        }
-        const data = await res?.json()
-        console.log(data);
-        
-    } catch (error) {
-        console.error("Fetch error: ", error)
-    }
-}
+// const getComments = async (url) => {
+//     try {
+//         const res = await fetch(url)
+//         if(!res?.ok) {
+//             throw new Error("Network response was not ok!");
+//         }
+//         const data = await res?.json()
+//         console.log(data);
 
-getComments("https://jsonplaceholder.typicode.com/comments/2")
+//     } catch (error) {
+//         console.error("Fetch error: ", error)
+//     }
+// }
 
+// getComments("https://jsonplaceholder.typicode.com/comments/2")
+
+
+
+
+// const numbers = [22, 32, 23, 33, 21, 55, 78, 99, 101];
+
+// const getOddNumbers = (numbers) => {
+//     let sum = 0;
+//     let oddNumbers = [];
+//     for (const number of numbers) {
+//         if (number % 2 !== 0) {
+//             oddNumbers.push(number);
+//         }
+//     }
+//     for (const odd of oddNumbers) {
+//         sum += odd;        
+//     }
+//     const avg = sum / oddNumbers.length;
+//     return avg.toFixed(2);
+
+// }
+
+// const result = getOddNumbers(numbers);
+// console.log(`Sum of odd numbers is ${result}`);
+
+
+
+// const numbers = [22, 32, 22, 33, 21, 55, 78, 55, 101, 99, 32, 55, 101];
+
+// const noDuplicateNumbers = (numbers) => {
+//     let uniqueNumbers = [];
+//     for(const number of numbers) {
+//         if(!uniqueNumbers.includes(number)) {
+//             uniqueNumbers.push(number)
+//         }
+//     }
+//     return uniqueNumbers;
+// }
+
+// const result = noDuplicateNumbers(numbers);
+// console.log(`Unique Numbers are: ${result}`);
+
+
+// for (var i = 0; i < 5; i++) {
+//  	 setTimeout(function () {
+//  	console.log(i);
+//   }, 100);
+// }
+
+let result = Math.pow(2, 2);
+console.log(result);
