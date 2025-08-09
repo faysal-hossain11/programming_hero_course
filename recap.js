@@ -154,7 +154,7 @@
 // setInterval(() => {
 //    num++
 //    console.log(num);
-   
+
 // }, 1000)
 
 
@@ -168,7 +168,7 @@
 //     if(number % 2 === 0) {
 //         console.log(number);
 //     }
-    
+
 // }
 
 // while(number of numbers)
@@ -194,7 +194,7 @@
 
 // for(const student of students) {
 //     console.log(`${student?.name} score ${student?.marks}`);
-    
+
 // }
 
 
@@ -261,16 +261,208 @@
 // console.log(result);
 
 
-const numbers = [11, 22, 234, 44, 55];
-const make_avg = (numbers) => {
-    let sum = 0;
-    for (const num of numbers) {
-        sum += num    
-    }
-    const avg = sum / numbers?.length;
-    return avg;       
-}
+// const numbers = [11, 22, 234, 44, 55];
+// const make_avg = (numbers) => {
+//     let sum = 0;
+//     for (const num of numbers) {
+//         sum += num    
+//     }
+//     const avg = sum / numbers?.length;
+//     return avg;       
+// }
 
-const result = make_avg(numbers);
-console.log(result);
+// const result = make_avg(numbers);
+// console.log(result);
 
+
+
+// const phones = [
+//     { name: 'Samsung', price: 20000, camera: '12mp', color: 'black' },
+//     { name: 'xoami', price: 18000, camera: '12mp', color: 'black' },
+//     { name: 'Oppo', price: 30000, camera: '12mp', color: 'black' },
+//     { name: 'Iphone', price: 100000, camera: '12mp', color: 'black' },
+//     { name: 'Walton', price: 31000, camera: '12mp', color: 'black' },
+//     { name: 'HTC', price: 27000, camera: '12mp', color: 'black' },
+// ]
+
+
+// const getCheapestPhone = (phones) => {
+//     let cheapestPrice = phones[0];
+
+//     for(const phone of phones) {
+//         if(phone?.price < cheapestPrice?.price) {
+//             cheapestPrice = phone;
+//         }
+//     }
+//     return cheapestPrice;
+// }
+
+// const cheapestPricePhone = getCheapestPhone(phones);
+// console.log(`Cheapest phone is ${cheapestPricePhone?.name} and price is ${cheapestPricePhone?.price}`);
+
+
+// const prices = [20000, 16000, 50000, 100000, 12000, 30000, 35000];
+// const getMinPrice = (prices) => {
+//     let minPrice = prices[0];
+//     for(const price of prices) {
+//         if(price < minPrice) {
+//             minPrice = price;
+//         }
+//         console.log(price);
+
+//     }
+//     return minPrice;
+// }
+
+// const result = getMinPrice(prices);
+// console.log(`Minimum price is ${result}`);
+
+
+// const products = [
+//     { name: 'shampoo', price: 300, quantity: 2 },
+//     { name: 'chiruni', price: 100, quantity: 3 },
+//     { name: 'shirt', price: 700, quantity: 5 },
+//     { name: 'pant', price: 1200, quantity: 1 },
+// ]
+
+// const getTotalPrice = (products) => {
+//     let disToPrice = 0;
+//     for(const product of products) {
+//         const totalPrice = product?.price * product?.quantity;
+//         console.log(totalPrice);
+
+//         if(totalPrice?.price === 2000 && product?.quantity === 4) {
+//             // const discountPrice = product?.price 
+
+//         }
+//     }
+//     return disToPrice;
+// }
+
+// const result = getTotalPrice(products);
+// console.log(`Total price of product is ${result}`);
+
+
+// const heights2 = [167, 190, 120, 165, 137];
+// const getLowestNumber = (lowestNumbers) => {
+//     let lowest = lowestNumbers[0];
+//     for (const number of lowestNumbers) {
+//         if(number < lowest) {
+//             lowest = number;
+//         }
+//     }
+//     return lowest;
+// }
+
+// const result = getLowestNumber(heights2);
+// console.log(`Lowest Number is ${result}`);
+
+
+// const smallestName = ['rahim', 'robin', 'rafi', 'ron', 'rashed'];
+
+// const findSmallestName = (names) => {
+//     let smallName = names[0];
+//     for (const name of names) {
+//         if(name?.length < smallName?.length) {
+//             smallName = name;
+//         }
+//     }
+//     return smallName;
+// }
+
+// const result = findSmallestName(smallestName);
+// console.log(`Smallest name is ${result}`);
+
+
+
+
+// laptop = 35000 tk
+// tablet = 15000 tk
+// mobile = 20000 tk
+
+
+// const calculateElectronicsBudget = (laptop, tablet, mobile) => {
+//      const totalBudget = laptop + tablet + mobile;    
+//      return totalBudget;
+// }
+
+// const result = calculateElectronicsBudget(35000, 15000, 20000);
+// console.log(`Total budget is ${result} taka`);
+
+
+// const phones = [
+//     { model: "PhoneA", brand: "Iphone", price: 95000 },
+//     { model: "PhoneB", brand: "Samsung", price: 40000 },
+//     { model: "PhoneC", brand: "Oppo", price: 26000 },
+//     { model: "PhoneD", brand: "Nokia", price: 35000 },
+//     { model: "PhoneE", brand: "Iphone", price: 105000 },
+//     { model: "PhoneF", brand: "HTC", price: 48000 },
+// ];
+
+
+// const findAveragePhonePrice = (phones) => {
+
+//     let totalPhonePrice = 0
+//     for (const phone of phones) {
+//         totalPhonePrice += phone?.price;
+//     }
+//     const averagePhonePrice = (totalPhonePrice / phones?.length);
+//     return averagePhonePrice.toFixed(2);
+
+// }
+// const result = findAveragePhonePrice(phones);
+// console.log(`Average phone price is ${result} taka`);
+
+
+// const employees = [
+//     { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
+//     { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
+//     { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
+//     { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
+// ];
+
+// const calculateCurrentSalary = (employees) => {
+
+//     let currentSalary = 0;
+//     for (const employee of employees) {
+//         const startingSalary = employee?.starting;
+
+//         for (let i = 0; i < employee?.experience; i++) {
+//             currentSalary += (startingSalary + (employee?.increment * i))
+//         }
+//         currentSalary += startingSalary; 
+//     }
+//     return currentSalary.toFixed(2);
+
+// }
+
+// const result = calculateCurrentSalary(employees);
+// console.log(`Current salary is ${result} taka`);
+
+
+
+// const employees = [
+//     { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
+//     { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
+//     { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
+//     { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
+// ];
+
+// const calculateTotalCurrentSalary = (employees) => {
+//     if(!employees || employees.length === 0) {
+//         return "No employees found";
+//     }
+
+//     let totalCurrentSalary = 0;
+
+//     for(const employee of employees) {
+//         const currentSalary = employee?.starting + (employee?.experience * employee?.increment);
+//         totalCurrentSalary += currentSalary; 
+//         console.log(`Current salary of ${employee?.name} is ${currentSalary} taka`);
+        
+//     }
+//     return totalCurrentSalary;
+// };
+
+// const result = calculateTotalCurrentSalary(employees);
+// console.log(`Current total salary is ${result} taka`);
