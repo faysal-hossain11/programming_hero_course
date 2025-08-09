@@ -459,10 +459,75 @@
 //         const currentSalary = employee?.starting + (employee?.experience * employee?.increment);
 //         totalCurrentSalary += currentSalary; 
 //         console.log(`Current salary of ${employee?.name} is ${currentSalary} taka`);
-        
+
 //     }
 //     return totalCurrentSalary;
 // };
 
 // const result = calculateTotalCurrentSalary(employees);
 // console.log(`Current total salary is ${result} taka`);
+
+
+
+
+// const getUsers = new Promise((resolve, reject) => {
+//     const usersAvailable = true;
+//     const users = ["John", "Alice", "Bob", "Charlie"];
+
+//     if (usersAvailable) {
+//         resolve(users);
+//     } else {
+//         reject("No user data available.");
+//     }
+// });
+
+// getUsers
+//     .then((userNames) => {
+//         console.log(userNames);
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//     });
+
+// Output: ['John', 'Alice', 'Bob', 'Charlie']
+
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+//     .then((res) => res.json())
+//     .then((data) => console.log(data))
+//     .catch((error) => console.error(error));
+
+// const getUsers = async (url) => {
+//     try{
+//         const res = await fetch(url)
+//         if(!res.ok) {
+//             throw new Error("Network response was not ok");
+//         }
+//         const data = await res.json();
+//         console.log(data);
+
+//     } catch(error) {
+//         console.error("Fetch error: ", error)
+//     }
+// }
+
+// getUsers("https://jsonplaceholder.typicode.com/user/1")
+
+
+
+const getComments = async (url) => {
+    try {
+        const res = await fetch(url)
+        if(!res?.ok) {
+            throw new Error("Network response was not ok!");
+        }
+        const data = await res?.json()
+        console.log(data);
+        
+    } catch (error) {
+        console.error("Fetch error: ", error)
+    }
+}
+
+getComments("https://jsonplaceholder.typicode.com/comments/2")
+
