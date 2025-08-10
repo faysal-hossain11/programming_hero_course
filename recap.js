@@ -579,5 +579,14 @@
 //   }, 100);
 // }
 
-let result = Math.pow(2, 2);
-console.log(result);
+// let result = Math.pow(2, 2);
+// console.log(result);
+
+const celToFah = (cel) => {
+    const fah = (cel * 9/5) + 32;
+    return fah.toFixed(2);
+}
+
+const result = celToFah(30);
+
+console.log(`Temperature in Fahrenheit is ${result}°F`);
