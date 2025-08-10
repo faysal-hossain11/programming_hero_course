@@ -582,11 +582,46 @@
 // let result = Math.pow(2, 2);
 // console.log(result);
 
-const celToFah = (cel) => {
-    const fah = (cel * 9/5) + 32;
-    return fah.toFixed(2);
+// const celToFah = (cel) => {
+//     const fah = (cel * 9/5) + 32;
+//     return fah.toFixed(2);
+// }
+
+// const result = celToFah(30);
+
+// console.log(`Temperature in Fahrenheit is ${result}°F`);
+
+
+// const lowestNumbers = [12, 34, 5, 67, 23, 1, 89, 0];
+// const findLowestNumber = (numbers) => {
+//     let leastNumber = numbers[0];
+//     for(const number of numbers) {
+//         if(number > leastNumber) {
+//             leastNumber = number;
+//         }
+//     }
+//     return leastNumber;
+// }
+
+// const lowest = findLowestNumber(lowestNumbers);
+// console.log(`Lowest number is ${lowest}`);
+
+
+
+
+const prices = [32000, 15000, 20000, 50000, 12000, 30000, 35000];
+
+const findMaxPrice = (prices) => {
+    let minPrice = prices[0];
+    for(const price of prices) {
+        if(price > minPrice) {
+            minPrice = price;
+        }
+    }
+    return minPrice;
 }
 
-const result = celToFah(30);
+const result = findMaxPrice(prices);
+console.log(`Maximum price is ${result}`);
 
-console.log(`Temperature in Fahrenheit is ${result}°F`);
+
