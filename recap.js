@@ -609,19 +609,71 @@
 
 
 
-const prices = [32000, 15000, 20000, 50000, 12000, 30000, 35000];
+// const prices = [32000, 15000, 20000, 50000, 12000, 30000, 35000];
 
-const findMaxPrice = (prices) => {
-    let minPrice = prices[0];
-    for(const price of prices) {
-        if(price > minPrice) {
-            minPrice = price;
-        }
-    }
-    return minPrice;
-}
+// const findMaxPrice = (prices) => {
+//     let minPrice = prices[0];
+//     for(const price of prices) {
+//         if(price > minPrice) {
+//             minPrice = price;
+//         }
+//     }
+//     return minPrice;
+// }
 
-const result = findMaxPrice(prices);
-console.log(`Maximum price is ${result}`);
+// const result = findMaxPrice(prices);
+// console.log(`Maximum price is ${result}`);
 
 
+
+// const fetchUsers = async () => {
+//     try {
+//         const res = await fetch("https://jsonplaceholder.typicode.com/users");
+//         if (!res?.ok) {
+//             throw new Error("Network response was not ok!");
+//         }
+
+//         const users = await res.json();
+
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
+
+// fetchUsers();
+
+
+
+
+
+// const fetchComments = async (id) => {
+//     try {
+//         const res = await fetch(`https://jsonplaceholder.typicode.com/comments/${id}`);
+//         if(!res?.ok) {
+//             throw new Error("Network response was not ok!");
+//         }
+
+//         const comments = await res.json();
+//         console.log(comments);
+        
+//     } catch (error) {
+//         console.error("Fetch error: ", error)
+//     }
+// }
+
+// fetchComments(4);
+
+// let x = null;
+// x ??= 75;
+
+// console.log(x); // Output: 75
+
+
+const product  = [
+    { name: "Laptop", price: 50000, quantity: 2 },
+    { name: "Mobile", price: 20000, quantity: 5 },
+    { name: "Tablet", price: 15000, quantity: 3 }
+]
+
+const name =  product[0].stock ?? 0
+console.log(name);
