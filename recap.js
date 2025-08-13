@@ -669,11 +669,47 @@
 // console.log(x); // Output: 75
 
 
-const product  = [
-    { name: "Laptop", price: 50000, quantity: 2 },
-    { name: "Mobile", price: 20000, quantity: 5 },
-    { name: "Tablet", price: 15000, quantity: 3 }
-]
+// const product  = [
+//     { name: "Laptop", price: 50000, quantity: 2 },
+//     { name: "Mobile", price: 20000, quantity: 5 },
+//     { name: "Tablet", price: 15000, quantity: 3 }
+// ]
 
-const name =  product[0].stock ?? 0
-console.log(name);
+// const name =  product[0].stock ?? 0
+// console.log(name);
+
+
+// // simple layer discount calculation
+
+
+// const discountPrice = (price, discount) => {
+
+//     const updatePrice = price - ((price * discount) / 100);
+//     return updatePrice.toFixed(2);
+// }
+
+// const price = 12000;
+// const discount = 10;
+// const result = discountPrice(price, discount);
+// console.log(`Discounted price is ${result} taka`);
+
+
+// // Multi-layer discount calculation
+// const multiLayerDiscount = (price, discount1, discount2) => {
+//     const firstDiscount = price - ((price * discount1) / 100);
+//     const finalPrice = firstDiscount - ((firstDiscount * discount2) / 100);
+//     return finalPrice.toFixed(2);
+
+// }
+
+// const price = 2000;
+// const discount1 = 10;
+// const discount2 = 5;
+// const result = multiLayerDiscount(price, discount1, discount2);
+// console.log(`Final price after multi-layer discount is ${result} taka`);
+
+
+
+let str = "I love programming in JavaScript";
+str = str.startsWith("I love");
+console.log(str); // Output: true
