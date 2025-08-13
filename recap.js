@@ -655,7 +655,7 @@
 
 //         const comments = await res.json();
 //         console.log(comments);
-        
+
 //     } catch (error) {
 //         console.error("Fetch error: ", error)
 //     }
@@ -710,6 +710,127 @@
 
 
 
-let str = "I love programming in JavaScript";
-str = str.startsWith("I love");
-console.log(str); // Output: true
+// let str = "I love programming in JavaScript";
+// str = str.startsWith("I love");
+// console.log(str); // Output: true
+
+
+// function totalFine( fare ) {
+
+//     if(typeof fare !== "number") {
+//         return "Invalid";
+//     }
+//     if(fare <= 0) {
+//         return "Invalid";
+//     }
+
+//     const fine = fare + fare * (20 / 100) + 30;
+//     return fine;
+
+// }
+
+// console.log(totalFine(-20)); // Output: 290.00
+
+
+
+
+// function onlyCharacter(str) {
+//     if(typeof str !== "string") {
+//         return "Invalid";
+//     }
+
+//     const removeSpace = str.replaceAll(" ", "");
+//     const result = removeSpace.toUpperCase();
+//     return result;
+
+// }
+
+// console.log(onlyCharacter("asd a as a a f")); // Output: "HelloWorld" 
+
+
+
+
+// function bestTeam(player1, player2) {
+//     if (typeof player1 !== "object") {
+//         return "Invalid";
+//     }
+//     if (typeof player2 !== "object") {
+//         return "Invalid";
+//     }
+//     const team1Score = player1?.foul + player1?.cardY + player1?.cardR;
+//     const team2Score = player2?.foul + player2?.cardY + player2?.cardR;
+
+//     if (team1Score < team2Score) {
+//         return player1?.name;
+//     } else if (team1Score === team2Score) {
+//         return "Tie";
+//     } else {
+//         return player2?.name;
+//     }
+// }
+
+
+// console.log(bestTeam(
+//    { name: "Germany", foul: 10, cardY: 1, cardR: 1 },
+// //    [{name: "Brazil", foul: 5, cardY: 2, cardR: 0}]
+// 34254
+// ));
+
+
+
+// function isSame(arr1, arr2) {
+//     if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+//         return "Invalid";
+//     }
+
+//     if (arr1.length !== arr2.length) {
+//         return false;
+//     }
+
+//     for (let i = 0; i < arr1.length; i++) {
+//         if (arr1[i] !== arr2[i]) {
+//             return false;
+//         }
+//     }
+//     return true;
+
+// }
+
+// console.log(isSame({data: [2 , 5 , 6] } , [2 , 5 , 6])); // Output: true
+
+
+
+
+function resultReport(marks) {
+    if (!Array.isArray(marks)) {
+        return "Invalid";
+    }
+
+    let total = 0;
+    let pass = [];
+    let fail = [];
+    for (const mark of marks) {
+        total += mark;
+
+        if (mark >= 40) {
+            pass.push(mark);
+        } else {
+            fail.push(mark);
+        }
+    }
+    const average =  total / marks.length;
+    
+    const result = {
+        finalScore: Math.round(average),
+        pass: pass.length,
+        fail: fail.length
+    }
+    return result;
+
+}
+
+// when i pass parameter as empty array [], this function expect array in some of marks. but got empty array, becouse of that it return "NaN"
+
+
+console.log(resultReport([98, 87, 67, 91, 92, 33, 87])); // Output: "Average: 86.25, Highest: 92, Lowest: 78"
+
