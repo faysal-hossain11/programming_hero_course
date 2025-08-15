@@ -750,31 +750,33 @@
 
 
 
-// function bestTeam(player1, player2) {
-//     if (typeof player1 !== "object") {
-//         return "Invalid";
-//     }
-//     if (typeof player2 !== "object") {
-//         return "Invalid";
-//     }
-//     const team1Score = player1?.foul + player1?.cardY + player1?.cardR;
-//     const team2Score = player2?.foul + player2?.cardY + player2?.cardR;
+function bestTeam(player1, player2) {
+    console.log(player2.length);
+    
+    if (typeof player1 !== "object" || player1 === null || Array.isArray(player1) || 
+        typeof player2 !== "object" || player2 === null || Array.isArray(player2)) {
+        return "Invalid";
+    }
+    
+    const team1Score = player1?.foul + player1?.cardY + player1?.cardR;
+    const team2Score = player2?.foul + player2?.cardY + player2?.cardR;
 
-//     if (team1Score < team2Score) {
-//         return player1?.name;
-//     } else if (team1Score === team2Score) {
-//         return "Tie";
-//     } else {
-//         return player2?.name;
-//     }
-// }
+    if (team1Score < team2Score) {
+        return player1?.name;
+    } else if (team1Score === team2Score) {
+        return "Tie";
+    } else {
+        return player2?.name;
+    }
+}
 
 
-// console.log(bestTeam(
-//    { name: "Germany", foul: 10, cardY: 1, cardR: 1 },
-// //    [{name: "Brazil", foul: 5, cardY: 2, cardR: 0}]
-// 34254
-// ));
+console.log(bestTeam(
+   { name: "Germany", foul: 10, cardY: 1, cardR: 1 },
+//    [{name: "Brazil", foul: 5, cardY: 2, cardR: 0}]
+{}
+// 23423
+));
 
 
 
@@ -801,36 +803,73 @@
 
 
 
-function resultReport(marks) {
-    if (!Array.isArray(marks)) {
-        return "Invalid";
-    }
+// function resultReport(marks) {
+//     if (!Array.isArray(marks)) {
+//         return "Invalid";
+//     }
 
-    let total = 0;
-    let pass = [];
-    let fail = [];
-    for (const mark of marks) {
-        total += mark;
+//     let total = 0;
+//     let pass = [];
+//     let fail = [];
+//     for (const mark of marks) {
+//         total += mark;
 
-        if (mark >= 40) {
-            pass.push(mark);
-        } else {
-            fail.push(mark);
-        }
-    }
-    const average =  total / marks.length;
-    
-    const result = {
-        finalScore: Math.round(average),
-        pass: pass.length,
-        fail: fail.length
-    }
-    return result;
+//         if (mark >= 40) {
+//             pass.push(mark);
+//         } else {
+//             fail.push(mark);
+//         }
+//     }
+//     const average =  total / marks.length;
 
-}
+//     const result = {
+//         finalScore: Math.round(average),
+//         pass: pass.length,
+//         fail: fail.length
+//     }
+//     return result;
 
-// when i pass parameter as empty array [], this function expect array in some of marks. but got empty array, becouse of that it return "NaN"
+// }
+
+// // when i pass parameter as empty array [], this function expect array in some of marks. but got empty array, becouse of that it return "NaN"
 
 
-console.log(resultReport([98, 87, 67, 91, 92, 33, 87])); // Output: "Average: 86.25, Highest: 92, Lowest: 78"
+// console.log(resultReport([98, 87, 67, 91, 92, 33, 87])); // Output: "Average: 86.25, Highest: 92, Lowest: 78"
+
+
+// const str = "Javascript is a programming language";
+
+// console.log(str.toLowerCase().startsWith("java"));
+
+// const fileName = "recap.JS";
+// console.log(fileName.toLowerCase().endsWith(".js")); // Output: true
+
+
+// const imageFileName = "department1.JPG";
+// const checkImageFileExtension = () => {
+//     if (imageFileName.toLowerCase().endsWith(".jpg")) {
+//         return "Valid Image File";
+//     } else {
+//         return "Invalid Image File";
+//     }
+// }
+
+// console.log(checkImageFileExtension(imageFileName));
+
+
+// const str = "I Love Programming in JavaScript ";
+
+// console.log(str.toLowerCase().includes("love")); // Output: true
+
+// const fruits = ["apple", "Banana", "cherry", "date"];
+// console.log(fruits.filter(fruit => fruit.toLowerCase().includes("banana"))); // Output: ["Banana"]
+
+// for (const fruit of fruits) {
+
+//     if (fruit.toLowerCase().includes("banana")) {
+//         console.log(`Found: ${fruit}`);
+        
+//     }
+// }
+
 
