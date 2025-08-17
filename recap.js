@@ -750,33 +750,33 @@
 
 
 
-function bestTeam(player1, player2) {
-    console.log(player2.length);
-    
-    if (typeof player1 !== "object" || player1 === null || Array.isArray(player1) || 
-        typeof player2 !== "object" || player2 === null || Array.isArray(player2)) {
-        return "Invalid";
-    }
-    
-    const team1Score = player1?.foul + player1?.cardY + player1?.cardR;
-    const team2Score = player2?.foul + player2?.cardY + player2?.cardR;
+// function bestTeam(player1, player2) {
+//     console.log(player2.length);
 
-    if (team1Score < team2Score) {
-        return player1?.name;
-    } else if (team1Score === team2Score) {
-        return "Tie";
-    } else {
-        return player2?.name;
-    }
-}
+//     if (typeof player1 !== "object" || player1 === null || Array.isArray(player1) || 
+//         typeof player2 !== "object" || player2 === null || Array.isArray(player2)) {
+//         return "Invalid";
+//     }
+
+//     const team1Score = player1?.foul + player1?.cardY + player1?.cardR;
+//     const team2Score = player2?.foul + player2?.cardY + player2?.cardR;
+
+//     if (team1Score < team2Score) {
+//         return player1?.name;
+//     } else if (team1Score === team2Score) {
+//         return "Tie";
+//     } else {
+//         return player2?.name;
+//     }
+// }
 
 
-console.log(bestTeam(
-   { name: "Germany", foul: 10, cardY: 1, cardR: 1 },
-//    [{name: "Brazil", foul: 5, cardY: 2, cardR: 0}]
-{}
-// 23423
-));
+// console.log(bestTeam(
+//    { name: "Germany", foul: 10, cardY: 1, cardR: 1 },
+// //    [{name: "Brazil", foul: 5, cardY: 2, cardR: 0}]
+// {}
+// // 23423
+// ));
 
 
 
@@ -868,8 +868,139 @@ console.log(bestTeam(
 
 //     if (fruit.toLowerCase().includes("banana")) {
 //         console.log(`Found: ${fruit}`);
-        
+
 //     }
 // }
+
+
+
+
+
+
+// const doctors = [
+//     {
+//         name: "Dr. Ahsan Rahman",
+//         speciality: "Cardiologist",
+//         degree: "MBBS, MD (Cardiology)",
+//         designation: "Senior Consultant",
+//         time: "10:00 AM - 2:00 PM",
+//         day: ["Sunday", "Tuesday", "Thursday"],
+//         isActive: true,
+//         order: 1
+//     },
+//     {
+//         name: "Dr. Farhana Islam",
+//         speciality: "Dermatologist",
+//         degree: "MBBS, FCPS (Dermatology)",
+//         designation: "Associate Professor",
+//         time: "3:00 PM - 6:00 PM",
+//         day: ["Monday", "Wednesday"],
+//         isActive: true,
+//         order: 2
+//     },
+//     {
+//         name: "Dr. Kamrul Hasan",
+//         speciality: "Neurologist",
+//         degree: "MBBS, MD (Neurology)",
+//         designation: "Professor",
+//         time: "11:00 AM - 1:00 PM",
+//         day: ["Sunday", "Tuesday", "Friday"],
+//         isActive: false,
+//         order: 3
+//     },
+//     {
+//         name: "Dr. Nusrat Jahan",
+//         speciality: "Pediatrician",
+//         degree: "MBBS, DCH, FCPS (Pediatrics)",
+//         designation: "Consultant",
+//         time: "9:00 AM - 12:00 PM",
+//         day: ["Monday", "Thursday"],
+//         isActive: true,
+//         order: 4
+//     },
+//     {
+//         name: "Dr. Mahmudul Alam",
+//         speciality: "Orthopedic Surgeon",
+//         degree: "MBBS, MS (Orthopedics)",
+//         designation: "Assistant Professor",
+//         time: "4:00 PM - 8:00 PM",
+//         day: ["Tuesday", "Friday"],
+//         isActive: true,
+//         order: 5
+//     },
+//     {
+//         name: "Dr. Shirin Akter",
+//         speciality: "Gynecologist",
+//         degree: "MBBS, FCPS (Gynecology & Obstetrics)",
+//         designation: "Senior Consultant",
+//         time: "2:00 PM - 5:00 PM",
+//         day: ["Sunday", "Wednesday"],
+//         isActive: false,
+//         order: 6
+//     },
+//     {
+//         name: "Dr. Rashedul Karim",
+//         speciality: "ENT Specialist",
+//         degree: "MBBS, MS (ENT)",
+//         designation: "Consultant",
+//         time: "6:00 PM - 9:00 PM",
+//         day: ["Monday", "Thursday"],
+//         isActive: true,
+//         order: 7
+//     },
+//     {
+//         name: "Dr. Laila Hossain",
+//         speciality: "Psychiatrist",
+//         degree: "MBBS, MD (Psychiatry)",
+//         designation: "Associate Professor",
+//         time: "10:00 AM - 1:00 PM",
+//         day: ["Tuesday", "Friday"],
+//         isActive: true,
+//         order: 8
+//     },
+//     {
+//         name: "Dr. Abdullah Mahfuz",
+//         speciality: "Oncologist",
+//         degree: "MBBS, MD (Oncology)",
+//         designation: "Professor",
+//         time: "12:00 PM - 3:00 PM",
+//         day: ["Sunday", "Thursday"],
+//         isActive: true,
+//         order: 9
+//     },
+//     {
+//         name: "Dr. Rubina Sultana",
+//         speciality: "Nephrologist",
+//         degree: "MBBS, MD (Nephrology)",
+//         designation: "Consultant",
+//         time: "5:00 PM - 7:00 PM",
+//         day: ["Wednesday", "Friday"],
+//         isActive: false,
+//         order: 10
+//     }
+// ];
+
+
+// findByDoctors = (doctors, search) => {
+//     if (!Array.isArray(doctors) || doctors.length === 0) {
+//         return "No doctors found";
+//     }
+
+//     let searchResults = [];
+//     for (const doctor of doctors) {
+//         if(doctor?.speciality.toLowerCase().includes(search.toLowerCase())) {
+//             searchResults.push(doctor);
+//         }
+//     }
+//     return searchResults;
+
+// }
+
+
+// const result = findByDoctors(doctors, "cardiologist");
+// console.log(result);
+
+
+
 
 
