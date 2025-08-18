@@ -1004,3 +1004,15 @@
 
 
 
+
+
+
+const user = {
+    name: 'Rahim',
+    address: { city: 'Dhaka' }
+};
+
+const stockCheck = user?.address?.stock ?? 0;
+console.log(stockCheck);
+
+
