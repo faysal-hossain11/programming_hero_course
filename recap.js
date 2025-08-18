@@ -1007,12 +1007,39 @@
 
 
 
-const user = {
-    name: 'Rahim',
-    address: { city: 'Dhaka' }
-};
+// const user = {
+//     name: 'Rahim',
+//     address: { city: 'Dhaka' }
+// };
 
-const stockCheck = user?.address?.stock ?? 0;
-console.log(stockCheck);
+// const stockCheck = user?.address?.stock ?? 0;
+// console.log(stockCheck);
 
 
+
+let products = [
+    { id: 1, name: "Smartphone", price: 200, stock: 10 },
+    { id: 2, name: "Laptop", price: 800, stock: 5 }
+];
+
+let cart = [];
+let orders = [];
+
+
+const addToCart = (productId, quentity) =>  {
+    let product = products.find((p) => p?.id === productId);
+    if(!product) {
+        throw new Error("Product not found");
+    } 
+
+    if(product?.stock < quentity) {
+        console.log("Not enough stock available!");
+    }
+
+    
+
+
+    
+}
+
+console.log(addToCart());
