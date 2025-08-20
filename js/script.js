@@ -1,8 +1,4 @@
-const updateHeading = document.getElementById('btn').addEventListener("click", function() {
-    const pageHeading = document.getElementById("heading")
-    console.log(pageHeading);
-
-    pageHeading.innerText = "updated Heading Texts!"
-    
-    
-})
+document.getElementById("post_btn").addEventListener("click", function() {
+    console.log("clicked!");
+    location.reload(); // manually reload page
+});
